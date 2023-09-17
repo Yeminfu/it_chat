@@ -1,10 +1,9 @@
-import { MessageFromDbInterface } from "@/app/types/message";
-import { UserFromDbInterface } from "@/app/types/user";
-import { pool } from "@/db/connect";
 
 //  async function getUserByTgId(tg_id: string) {
 //     console.log('getUserByTgId', tg_id);
 // }
+
+import { pool } from "../../connect";
 
 
 export default async function getUserIdByTelegramId(tg_id: number): Promise<number> {

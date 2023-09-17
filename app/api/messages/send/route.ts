@@ -1,6 +1,6 @@
-import { pool } from "@/db/connect";
-import getUserIdByTelegramId from "@/db/users/get/get_user_by_tg_id";
 import { NextResponse } from "next/server";
+import { pool } from "../../../../db/connect";
+import getUserIdByTelegramId from "../../../../db/users/get/get_user_by_tg_id";
 
 export async function POST(request: Request) {
     const { to_user, text } = await request.json();
@@ -18,15 +18,11 @@ export async function POST(request: Request) {
 }
 
 async function createMessageInDb(to_user: number, text: string, full_message: string) {
-    console.log('createMessageInDb', );
-
-    // async function createMessageInDb(values: MessageFromDbInterface) {
     const qs = `INSERT INTO messages (to_user, text, full_message) VALUES (?,?,?)`;
     return await new Promise(resolve => {
         pool.query(
             qs,
             [to_user, text, full_message],
-            // Object.values(values),
             function (err: any, res: any) {
                 if (err) {
                     console.log('err #fkzв4sdf', err);
