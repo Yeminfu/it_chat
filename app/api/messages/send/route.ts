@@ -68,9 +68,9 @@ async function sendMessageToTg(tg_id: string, text: string) {
             const user_id = await getUserIdByTelegramId(Number(chatId));
             // console.log({ user_id });
 
-            // createNewMessage(
-            //     null, user_id, text, JSON.stringify(data)
-            // )
+            createNewMessage(
+                null, user_id, text, JSON.stringify(data)
+            )
 
             // Дополнительные действия после отправки сообщения
         })
