@@ -1,9 +1,9 @@
-import allMessagesString from '@/allMessages.string'
-import { pool } from '@/db/connect'
 import { UserFromDbInterface } from './types/user';
 import { MessageFromDbInterface } from './types/message';
 import SendMessageForm from './sendMessageForm';
 import dayjs from 'dayjs';
+import allMessagesString from '../allMessages.string';
+import { pool } from '../db/connect';
 
 export default async function Home() {
     const usersFromDb = await getUsers();
