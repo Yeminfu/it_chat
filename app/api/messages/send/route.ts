@@ -68,7 +68,7 @@ async function sendMessageToTg(tg_id: string, text: string) {
             const user_id = await getUserIdByTelegramId(Number(chatId));
             // console.log({ user_id });
 
-            createNewMessage(
+            const newMessage_id = await createNewMessage(
                 null, user_id, text, JSON.stringify(data)
             )
 
@@ -82,6 +82,8 @@ async function sendMessageToTg(tg_id: string, text: string) {
 
 
 async function createNewMessage(from_user: number | null, to_user: number | null, text: string, full_message: string, created_date?: string) {
+
+    console.log('createNewMessage #fsdfm3', from_user, text, full_message);
 
     const values: any = {
         from_user,
