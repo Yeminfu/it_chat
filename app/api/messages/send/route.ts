@@ -72,6 +72,9 @@ async function sendMessageToTg(tg_id: string, text: string) {
                 null, user_id, text, JSON.stringify(data)
             )
 
+            console.log('newMessage_id', newMessage_id);
+
+
             // Дополнительные действия после отправки сообщения
         })
         .catch(error => {
